@@ -1,0 +1,23 @@
+.WaterfallItem {
+  padding-bottom: 20rpx;
+}
+
+.Card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.CardImage {
+  width: 100%;
+  display: block;
+}
+
+.CardTitle {
+  font-size: 24rpx;
+  color: #333;
+  padding: 16rpx;
+  background-color: #fff;
+}

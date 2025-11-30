@@ -1,4 +1,5 @@
 import './index.css';
+import { ShopItem } from './ShopItem/index.jsx';
 import promo1 from '../../assets/PromotionProduct/1.png';
 import promo2 from '../../assets/PromotionProduct/2.png';
 import promo3 from '../../assets/PromotionProduct/3.png';
@@ -21,8 +22,8 @@ export function ShopProduct() {
   return (
     <list className='Scroll' scroll-orientation="horizontal">
       {images.map((src, index) => (
-        <list-item key={index} item-key={index.toString()} className="PromoCard">
-          <image src={src} className="PromoImage" />
+        <list-item key={index} item-key={index.toString()}>
+            <ShopItem src={src} />
         </list-item>
       ))}
     </list>

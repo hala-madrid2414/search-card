@@ -1,7 +1,7 @@
 .HeaderContainer {
   display: flex;
   flex-direction: row;
-  width: 750rpx;
+  width: 100%;
   padding: 20rpx;
   background-color: #ffffff;
   box-sizing: border-box;

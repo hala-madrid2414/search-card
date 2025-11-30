@@ -1,8 +1,8 @@
 import { useState } from '@lynx-js/react';
 import './index.css';
 import logo from '../../assets/target-header-logo.png';
-import heartIcon from '../../assets/Icons/recommend.svg';
-import emptyHeartIcon from '../../assets/Icons/no-recommend.png';
+import heartIcon from '../../assets/Icons/redHeart.png';
+import emptyHeartIcon from '../../assets/Icons/whiteHeart.png';
 
 export function ShopHeader() {
   const [isCollected, setIsCollected] = useState(true);

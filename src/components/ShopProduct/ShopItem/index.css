@@ -1,12 +1,3 @@
-.Scroll {
-  width: 100%;
-  height: 350rpx;
-  display: flex;
-  flex-direction: row;
-  
-  margin-left: 20rpx;
-}
-
 .PromoCard {
   display: flex;
   flex-direction: column;
