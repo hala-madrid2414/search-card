@@ -1,0 +1,171 @@
+.HeaderContainer {
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  padding: 20rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.LogoContainer {
+  position: relative;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+}
+
+.Logo {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #FF0000;
+}
+
+.LiveBadge {
+  position: absolute;
+  top: -10rpx;
+  left: 0;
+  background-color: #FF4477;
+  padding: 4rpx 8rpx;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.LiveText {
+  color: white;
+  font-size: 18rpx;
+  font-weight: bold;
+}
+
+.InfoContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+/* Row 1: Title */
+.TitleRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ShopName {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 10rpx;
+  max-width: 350rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Tag {
+  border: 1rpx solid #FF8800;
+  border-radius: 4rpx;
+  padding: 2rpx 6rpx;
+  margin-right: 8rpx;
+  background-color: #FFF5E0;
+}
+
+.TagText {
+  font-size: 20rpx;
+  color: #FF8800;
+}
+
+/* Row 2: Rating */
+.RatingRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.HeartIcon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 6rpx;
+}
+
+.Score {
+  color: #FF4400;
+  font-weight: bold;
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+
+.Reviews, .Price {
+  font-size: 22rpx;
+  color: #666;
+  margin-right: 10rpx;
+}
+
+/* Row 3: Location */
+.LocationRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.Category, .Address {
+  font-size: 22rpx;
+  color: #666;
+  margin-right: 10rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.Address {
+    max-width: 250rpx;
+}
+
+.Distance {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: auto; /* Push to right */
+}
+
+/* Row 4: Ranking/Tags */
+.RankingRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.RankingTag {
+  background-color: #FFF0E5;
+  padding: 4rpx 8rpx;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.RankingIcon {
+    width: 20rpx;
+    height: 20rpx;
+    margin-right: 4rpx;
+}
+
+.RankingText {
+  color: #FF6600;
+  font-size: 20rpx;
+}
+
+.SimpleTag {
+  background-color: #F5F5F5;
+  color: #666;
+  font-size: 20rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+}
