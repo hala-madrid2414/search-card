@@ -1,0 +1,26 @@
+.Scroll {
+  width: 750rpx;
+  height: 350rpx;
+  display: flex;
+  flex-direction: row;
+  
+  margin-left: 20rpx;
+}
+
+.PromoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 220rpx;
+  height: 350rpx;
+  background-color: #fff;
+
+}
+
+.PromoImage {
+  width: 200rpx;
+  height: 100%;
+  margin-top: 10rpx;
+  border-radius: 8rpx;
+}
