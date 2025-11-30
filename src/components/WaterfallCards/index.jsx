@@ -15,11 +15,13 @@ export function WaterfallCards() {
               src={item.src}
               className="CardImage"
               style={{
+                 width: '100%',
+                 height: '100%',
                  aspectRatio: `${item.width} / ${item.height}`
               }}
-              mode="aspectFit" 
+              mode="aspectFill" 
             />
-            <text className="CardTitle">Furniture {index}</text>
+
           </view>
         </list-item>
       ))}

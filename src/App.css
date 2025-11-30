@@ -7,7 +7,7 @@
   height: 100vh;
   
   /* 3. Visual */
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .PromoteProduct {
@@ -24,7 +24,7 @@
 .WaterfallList {
   width: 100%;
   flex: 1;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   padding: 20rpx;
   box-sizing: border-box;
 }
