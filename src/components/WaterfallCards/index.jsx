@@ -1,10 +1,10 @@
-import { furnituresPictures } from '../../assets/example-pictures/furnitures/furnituresPictures';
+import { commentCardsPictures } from '../../assets/example-pictures/comment-cards/commentCardsPictures';
 import './index.css';
 
 export function WaterfallCards() {
   return (
     <>
-      {furnituresPictures.map((item, index) => (
+      {commentCardsPictures.map((item, index) => (
         <list-item
           key={index}
           item-key={index.toString()}

@@ -14,13 +14,7 @@ import pic7 from "./7.png";
 import pic8 from "./8.png";
 import pic9 from "./9.png";
 
-export interface Picture {
-  src: string;
-  width: number;
-  height: number;
-}
-
-export const furnituresPicturesSubArray: Picture[] = [
+export const commentCardsPicturesSubArray = [
   {
     src: pic0,
     width: 315,
@@ -38,8 +32,8 @@ export const furnituresPicturesSubArray: Picture[] = [
   },
   {
     src: pic3,
-    width: 306,
-    height: 457,
+    width: 315,
+    height: 548,
   },
   {
     src: pic4,
@@ -98,10 +92,10 @@ export const furnituresPicturesSubArray: Picture[] = [
   },
 ];
 
-export const furnituresPictures: Picture[] = [
-  ...furnituresPicturesSubArray,
-  ...furnituresPicturesSubArray,
-  ...furnituresPicturesSubArray,
-  ...furnituresPicturesSubArray,
-  ...furnituresPicturesSubArray,
+export const commentCardsPictures = [
+  ...commentCardsPicturesSubArray,
+  ...commentCardsPicturesSubArray,
+  ...commentCardsPicturesSubArray,
+  ...commentCardsPicturesSubArray,
+  ...commentCardsPicturesSubArray,
 ];
