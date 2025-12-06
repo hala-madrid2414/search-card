@@ -18,6 +18,9 @@
   width: 140rpx;
   height: 140rpx;
   border-radius: 12rpx;
+}
+
+.Logo--live {
   border: 2rpx solid #FF0000;
 }
 

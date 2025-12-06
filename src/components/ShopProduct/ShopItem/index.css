@@ -29,6 +29,24 @@
   border-radius: 8rpx;
 }
 
+.StoreLabel {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5rpx;
+  padding: 4rpx 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.StoreLabelText {
+  color: #fff;
+  font-size: 16rpx;
+  line-height: 1;
+}
+
 /* Info Section */
 .PromoInfo {
   width: 100%;

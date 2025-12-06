@@ -6,6 +6,9 @@ export function ShopItem({ item }) {
       <view className="PromoCard">
         <view className="ImageContainer">
           <image src={item.src} className="PromoHeadImage" />
+          <view className="StoreLabel">
+            <text className="StoreLabelText">{item.label}</text>
+          </view>
         </view>
         
         <view className="PromoInfo">
@@ -16,7 +19,7 @@ export function ShopItem({ item }) {
             <text className="OldPrice">{item.oldPrice}</text>
             {item.label && (
               <view className="LabelTag">
-                <text className="LabelText">{item.label}</text>
+                <text className="LabelText">{item.discount}</text>
               </view>
             )}
           </view>
