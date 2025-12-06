@@ -12,7 +12,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@lynx-js/react": "^0.114.5"
+    "@lynx-js/react": "^0.114.5",
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.3",
