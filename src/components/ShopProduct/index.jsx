@@ -1,29 +1,163 @@
 import './index.css';
 import { ShopItem } from './ShopItem/index.jsx';
-import promo1 from '../../assets/PromotionProduct/1.png';
-import promo2 from '../../assets/PromotionProduct/2.png';
-import promo3 from '../../assets/PromotionProduct/3.png';
-import promo4 from '../../assets/PromotionProduct/4.png';
-import promo5 from '../../assets/PromotionProduct/5.png';
-import promo6 from '../../assets/PromotionProduct/6.png';
-import promo7 from '../../assets/PromotionProduct/7.png';
-import promo8 from '../../assets/PromotionProduct/8.png';
-import promo9 from '../../assets/PromotionProduct/9.png';
-import promo10 from '../../assets/PromotionProduct/10.png';
-import promo11 from '../../assets/PromotionProduct/11.png';
-import promo12 from '../../assets/PromotionProduct/12.png';
+import promo1Head from '../../assets/PromotionProduct/1-head.png';
+import promo2Head from '../../assets/PromotionProduct/2-head.png';
+import promo3Head from '../../assets/PromotionProduct/3-head.png';
+
+
+const products = [
+    { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+        { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+        { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+        { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+        { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+        { 
+      type: 'custom', 
+      src: promo1Head, 
+      title: '【爆款甄选】瑞门爆款12选1', 
+      newPrice: '11.66', 
+      oldPrice: '￥32', 
+      label: '3.7折'
+    },
+    { 
+      type: 'custom', 
+      src: promo2Head, 
+      title: '【健康美式】8选1', 
+      newPrice: '11.9', 
+      oldPrice: '￥32',
+      label: '3.8折'
+    },
+    { 
+      type: 'custom', 
+      src: promo3Head, 
+      title: '【联名PP杯】生椰杨枝甘露（超大杯）', 
+      newPrice: '12.8', 
+      oldPrice: '￥32',
+      label: '4.0折'
+    },
+  ].map((item, index) => ({ ...item, id: index.toString() }));
 
 export function ShopProduct() {
-  const images = [
-    promo1, promo2, promo3, promo4, promo5, promo6,
-    promo7, promo8, promo9, promo10, promo11, promo12
-  ];
-
   return (
-    <list className='Scroll' scroll-orientation="horizontal">
-      {images.map((src, index) => (
-        <list-item key={index} item-key={index.toString()}>
-            <ShopItem src={src} />
+    <list className='Scroll' scroll-orientation="horizontal" main-axis-gap="16rpx">
+      {products.map((item) => (
+        <list-item key={item.id} item-key={item.id}>
+            <ShopItem item={item} />
         </list-item>
       ))}
     </list>

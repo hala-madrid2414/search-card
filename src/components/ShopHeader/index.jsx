@@ -45,7 +45,7 @@ export function ShopHeader() {
           </view>
           <text className="Score">4.3 推荐</text>
           <text className="Reviews">94条评价</text>
-          <text className="Price">人均 ¥12</text>
+          <text className="HeaderPrice">人均 ¥12</text>
         </view>
 
         {/* Row 3: Location */}
