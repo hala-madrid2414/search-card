@@ -26,3 +26,7 @@ This pdf doc describes the progress of this task.
 It's a pdf version of a feishu doc.
 
 第2周作业进度.pdf
+
+## Backend Service Guide
+
+For detailed instructions on setting up and using the Express backend service, please refer to the [Express Backend Guide](docs/EXPRESS_BACKEND_GUIDE.md).
