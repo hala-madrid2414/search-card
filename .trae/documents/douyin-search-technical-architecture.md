@@ -36,18 +36,23 @@ graph TD
 
 ### 核心技术栈
 - **前端框架**: `@lynx-js/react@^0.114.5`（提供 React 语法与 Hooks 绑定）
+- **状态管理**: `@reduxjs/toolkit@^2.11.0` + `react-redux@^9.2.0`（Redux Toolkit 状态管理）
 - **构建工具**: `@lynx-js/rspeedy@^0.12.0`（Lynx 官方构建工具）
 - **React 支持插件**: `@lynx-js/react-rsbuild-plugin@^0.11.4`
 - **二维码预览插件**: `@lynx-js/qrcode-rsbuild-plugin@^0.4.3`
+- **HTTP客户端**: `axios@^1.13.2`（API请求）
 - **测试框架**: `vitest@^3.2.4`
 - **样式方案**: CSS（rpx 单位，跨端适配）
-- **后端服务**: 无（当前为纯前端静态实现）
+- **后端服务**: Express@^5.2.1（提供API服务）
 
 ### 核心依赖库
 - **@lynx-js/react**: Lynx 跨端框架 React 绑定
 - **@lynx-js/rspeedy**: Lynx 应用构建和开发工具
 - **@lynx-js/react-rsbuild-plugin**: React 支持插件
 - **@lynx-js/qrcode-rsbuild-plugin**: 开发环境二维码预览插件
+- **@reduxjs/toolkit**: Redux状态管理工具包
+- **react-redux**: React-Redux绑定库
+- **axios**: HTTP客户端库
 
 ## 3. 应用入口与路由
 
@@ -189,7 +194,129 @@ const showShopCard = searchType === 'restaurant' || searchType === 'shop';
 - **文档维护**: 保持技术文档与代码同步更新（注意现有 `src/__tests__/index.test.jsx` 与路径、资源不一致需更新）
 - **性能监控**: 接入性能监控工具，持续优化用户体验
 
-## 8. 代码-文档对齐补充
+## 8. Redux状态管理架构
+
+### 8.1 Redux架构设计
+```mermaid
+graph TD
+  A[React Components] --> B[React-Redux Hooks]
+  B --> C[Redux Store]
+  C --> D[Slices]
+  D --> D1[searchSlice - 搜索状态]
+  D --> D2[collectionSlice - 收藏状态]
+  D --> D3[contentSlice - 内容数据]
+  D --> D4[uiSlice - UI状态]
+  
+  E[Async Thunks] --> C
+  E --> E1[搜索API调用]
+  E --> E2[收藏API同步]
+  E --> E3[内容加载]
+  
+  C --> F[Redux DevTools]
+  
+  subgraph "State Management Layer"
+    C
+    D
+    E
+  end
+```
+
+### 8.2 状态结构设计
+```typescript
+// Root State Interface
+interface RootState {
+  search: SearchState;
+  collection: CollectionState;
+  content: ContentState;
+  ui: UIState;
+}
+
+// 搜索状态
+interface SearchState {
+  keyword: string;
+  type: 'normal' | 'shop' | 'restaurant';
+  isLoading: boolean;
+  error: string | null;
+}
+
+// 收藏状态
+interface CollectionState {
+  shops: string[]; // 收藏的店铺ID数组
+  isSyncing: boolean;
+}
+
+// 内容状态
+interface ContentState {
+  waterfallItems: WaterfallItem[];
+  shopData: ShopData | null;
+  promotionProducts: Product[];
+  hasMore: boolean;
+  page: number;
+}
+
+// UI状态
+interface UIState {
+  scrollPosition: number;
+  selectedTab: string;
+  showLoginModal: boolean;
+}
+```
+
+### 8.3 异步数据流
+```mermaid
+sequenceDiagram
+  participant User
+  participant Component
+  participant Redux
+  participant Thunk
+  participant API
+  
+  User->>Component: 输入搜索词
+  Component->>Redux: dispatch(setKeyword())
+  Component->>Redux: dispatch(fetchSearchResults())
+  Redux->>Thunk: 执行异步thunk
+  Thunk->>API: 调用搜索接口
+  API-->>Thunk: 返回搜索结果
+  Thunk->>Redux: dispatch(setContentData())
+  Redux-->>Component: 状态更新触发重渲染
+```
+
+### 8.4 组件集成方案
+```jsx
+// App.jsx - Redux Provider集成
+import { Provider } from 'react-redux'
+import { store } from './store'
+
+export function App() {
+  return (
+    <Provider store={store}>
+      <SearchApp />
+    </Provider>
+  )
+}
+
+// 组件中使用Redux状态
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleCollection } from './slices/collectionSlice'
+
+function ShopHeader({ shopId }) {
+  const dispatch = useDispatch()
+  const isCollected = useSelector(state => 
+    state.collection.shops.includes(shopId)
+  )
+  
+  const handleCollect = () => {
+    dispatch(toggleCollection(shopId))
+  }
+  
+  return (
+    // ... JSX使用isCollected状态
+  )
+}
+```
+
+## 9. 代码-文档对齐补充
 - **入口与构建**: `lynx.config.js` 使用 `@lynx-js/rspeedy`，入口为 `./src/index.jsx`
 - **类型声明**: 存在 `src/rspeedy-env.d.ts`，用于图片与环境类型声明
 - **路径规范**: 统一相对路径导入，显式 `.jsx/.css` 扩展名；暂未使用路径别名
+- **Redux集成**: 已添加 `@reduxjs/toolkit` 和 `react-redux` 依赖，支持全局状态管理
