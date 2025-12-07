@@ -7,8 +7,17 @@ const shopHeader = require('../data/shopHeader.json');
 const shopProductsRaw = require('../data/shopProducts.json');
 const waterfallCardsBase = require('../data/waterfallCards.json');
 
-// 处理数据：为 products 补充 id 字段
-const shopProducts = shopProductsRaw.map((item, index) => ({
+// 处理数据：为 products 补充 id 字段，并确保有100个商品
+const extendedShopProductsRaw = [
+  ...shopProductsRaw,
+  ...shopProductsRaw,
+  ...shopProductsRaw,
+  ...shopProductsRaw,
+  ...shopProductsRaw,
+  ...shopProductsRaw,
+].slice(0, 100);
+
+const shopProducts = extendedShopProductsRaw.map((item, index) => ({
   ...item,
   id: index.toString(),
 }));

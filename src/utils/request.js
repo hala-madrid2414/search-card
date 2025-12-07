@@ -1,7 +1,17 @@
 import axios from 'axios';
 
+// 以下是npm run server后的信息
+// Mock server running at http://localhost:8888
+// Static assets available at http://localhost:8888/static
+// API endpoints:
+//   - GET /api/shop-header
+//   - GET /api/shop-products
+//   - GET /api/waterfall-cards
+// 由于我只能通过电脑连接手机热点，手机扫码预览项目，故开发时采用的是实际地址
+export const baseURL = 'http://localhost:8888';
+
 const request = axios.create({
-  baseURL: 'http://localhost:8888',
+  baseURL,
 });
 
 // 请求拦截器
