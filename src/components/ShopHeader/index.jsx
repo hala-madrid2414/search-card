@@ -1,10 +1,11 @@
 import { useState } from '@lynx-js/react';
+import { useSelector } from 'react-redux';
 import './index.css';
 import heartIcon from '@/assets/Icons/redHeart.png';
 import emptyHeartIcon from '@/assets/Icons/whiteHeart.png';
-import { defaultShopData } from './data';
 
 export function ShopHeader(props) {
+  const { shopInfo: defaultShopData } = useSelector(state => state.shop);
   // Merge default data with passed props
   // Note: This is a shallow merge. If props contains nested objects like 'statistics', 
   // it will replace the default 'statistics' entirely.

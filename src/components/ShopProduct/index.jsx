@@ -1,8 +1,9 @@
 import './index.css';
 import { ShopItem } from './ShopItem/index.jsx';
-import { products } from './data.js';
+import { useSelector } from 'react-redux';
 
 export function ShopProduct() {
+  const { products } = useSelector(state => state.shop);
   return (
     <list className='Scroll' scroll-orientation="horizontal" main-axis-gap="16rpx">
       {products.map((item) => (

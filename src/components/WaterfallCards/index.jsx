@@ -1,7 +1,8 @@
-import { commentCardsPictures } from '@/assets/example-pictures/comment-cards/commentCardsPictures';
+import { useSelector } from 'react-redux';
 import './index.css';
 
 export function WaterfallCards() {
+  const { waterfallCards: commentCardsPictures } = useSelector(state => state.comment);
   return (
     <>
       {commentCardsPictures.map((item, index) => (
