@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "rspeedy preview",
     "test": "vitest run",
+    "postinstall": "npm install --prefix server",
     "server": "npm --prefix server run server",
     "server:dev": "npm --prefix server run dev"
   },
