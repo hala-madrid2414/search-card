@@ -10,9 +10,11 @@ export function ShopItem({ item }) {
             <text className="StoreLabelText">{item.label}</text>
           </view>
         </view>
-        
+
         <view className="PromoInfo">
-          <text className="PromoTitle" max-lines="2">{item.title}</text>
+          <text className="PromoTitle" max-lines="2">
+            {item.title}
+          </text>
           <view className="PromoPrice">
             <text className="Currency">￥</text>
             <text className="Price">{item.newPrice}</text>

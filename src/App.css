@@ -1,11 +1,11 @@
 .App {
   /* 1. Positioning */
   position: relative;
-  
+
   /* 2. Box Model (Display, Size, Margin, Padding) */
   width: 750rpx;
   height: 100vh;
-  
+
   /* 3. Visual */
   background-color: #ffffff;
 }
@@ -18,7 +18,7 @@
   margin-top: 150rpx;
 
   /* 3. Visual */
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 .WaterfallList {

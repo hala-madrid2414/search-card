@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import shopReducer from './modules/shop';
 import commentReducer from './modules/comment';
+import shopReducer from './modules/shop';
 
 const store = configureStore({
   reducer: {

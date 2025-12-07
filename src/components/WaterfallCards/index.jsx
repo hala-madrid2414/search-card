@@ -2,7 +2,9 @@ import { useSelector } from 'react-redux';
 import './index.css';
 
 export function WaterfallCards() {
-  const { waterfallCards: commentCardsPictures } = useSelector(state => state.comment);
+  const { waterfallCards: commentCardsPictures } = useSelector(
+    (state) => state.comment,
+  );
   return (
     <>
       {commentCardsPictures.map((item, index) => (
@@ -16,13 +18,12 @@ export function WaterfallCards() {
               src={item.src}
               className="CardImage"
               style={{
-                 width: '100%',
-                 height: '100%',
-                 aspectRatio: `${item.width} / ${item.height}`
+                width: '100%',
+                height: '100%',
+                aspectRatio: `${item.width} / ${item.height}`,
               }}
-              mode="aspectFill" 
+              mode="aspectFill"
             />
-
           </view>
         </list-item>
       ))}

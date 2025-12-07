@@ -21,14 +21,14 @@
 }
 
 .Logo--live {
-  border: 2rpx solid #FF0000;
+  border: 2rpx solid #ff0000;
 }
 
 .LiveBadge {
   position: absolute;
   top: -10rpx;
   left: 0;
-  background-color: #FF4477;
+  background-color: #ff4477;
   padding: 4rpx 8rpx;
   border-radius: 8rpx;
   display: flex;
@@ -69,16 +69,16 @@
 }
 
 .Tag {
-  border: 1rpx solid #FF8800;
+  border: 1rpx solid #ff8800;
   border-radius: 4rpx;
   padding: 2rpx 6rpx;
   margin-right: 8rpx;
-  background-color: #FFF5E0;
+  background-color: #fff5e0;
 }
 
 .TagText {
   font-size: 20rpx;
-  color: #FF8800;
+  color: #ff8800;
 }
 
 /* Row 2: Rating */
@@ -96,13 +96,14 @@
 }
 
 .Score {
-  color: #FF4400;
+  color: #ff4400;
   font-weight: bold;
   font-size: 24rpx;
   margin-right: 10rpx;
 }
 
-.Reviews, .Distance {
+.Reviews,
+.Distance {
   font-size: 24rpx;
   color: #666;
   margin-right: 10rpx;
@@ -122,7 +123,8 @@
   margin-top: 8rpx;
 }
 
-.Category, .Address {
+.Category,
+.Address {
   font-size: 22rpx;
   color: #666;
   margin-right: 10rpx;
@@ -132,7 +134,7 @@
 }
 
 .Address {
-    max-width: 250rpx;
+  max-width: 250rpx;
 }
 
 .Distance {
@@ -150,7 +152,7 @@
 }
 
 .RankingTag {
-  background-color: #FFF0E5;
+  background-color: #fff0e5;
   padding: 4rpx 8rpx;
   border-radius: 4rpx;
   margin-right: 10rpx;
@@ -160,18 +162,18 @@
 }
 
 .RankingIcon {
-    width: 20rpx;
-    height: 20rpx;
-    margin-right: 4rpx;
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 4rpx;
 }
 
 .RankingText {
-  color: #FF6600;
+  color: #ff6600;
   font-size: 20rpx;
 }
 
 .SimpleTag {
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   color: #666;
   font-size: 20rpx;
   padding: 4rpx 8rpx;

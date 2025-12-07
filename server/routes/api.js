@@ -10,7 +10,7 @@ const waterfallCardsBase = require('../data/waterfallCards.json');
 // 处理数据：为 products 补充 id 字段
 const shopProducts = shopProductsRaw.map((item, index) => ({
   ...item,
-  id: index.toString()
+  id: index.toString(),
 }));
 
 // 瀑布流卡片：将基础 15 张图片重复 5 次，并补充 id 字段
@@ -24,7 +24,7 @@ const waterfallCardsRaw = [
 
 const waterfallCards = waterfallCardsRaw.map((item, index) => ({
   ...item,
-  id: index.toString()
+  id: index.toString(),
 }));
 
 // 定义路由

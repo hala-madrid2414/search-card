@@ -63,7 +63,7 @@
   color: #333;
   margin-bottom: 8rpx;
   line-height: 32rpx;
-  
+
   /* Multi-line ellipsis */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -73,19 +73,19 @@
   display: flex;
   flex-direction: row;
   align-items: baseline;
-  margin-top: auto; 
+  margin-top: auto;
   flex-wrap: wrap;
 }
 
 .Currency {
   font-size: 16rpx;
-  color: #FF4B4B;
+  color: #ff4b4b;
   font-weight: bold;
 }
 
 .Price {
   font-size: 24rpx;
-  color: #FF4B4B;
+  color: #ff4b4b;
   font-weight: bold;
   line-height: 1;
   margin-right: 4rpx;
@@ -99,7 +99,7 @@
 }
 
 .LabelTag {
-  background-color: #FFECEC;
+  background-color: #ffecec;
   border-radius: 4rpx;
   padding: 0 4rpx;
   display: flex;
@@ -109,6 +109,6 @@
 
 .LabelText {
   font-size: 14rpx;
-  color: #FF4B4B;
+  color: #ff4b4b;
   line-height: 1;
 }

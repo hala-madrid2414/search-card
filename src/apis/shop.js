@@ -1,9 +1,9 @@
-import request from '@/utils/request'
+import request from '@/utils/request';
 
 export function getShopHeader() {
-  return request('/api/shop-header')
+  return request('/api/shop-header');
 }
 
 export function getShopProducts() {
-  return request('/api/shop-products')
+  return request('/api/shop-products');
 }

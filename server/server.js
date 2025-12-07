@@ -1,4 +1,3 @@
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -33,7 +32,7 @@ const waterfallCardsRaw = [
 
 const waterfallCards = waterfallCardsRaw.map((item, index) => ({
   ...item,
-  id: index.toString()
+  id: index.toString(),
 }));
 
 app.get('/api/waterfall-cards', (req, res) => {
