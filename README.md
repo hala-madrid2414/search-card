@@ -1,57 +1,79 @@
-## Rspeedy project
+# 搜索卡片项目 (Rspeedy)
 
-This is a ReactLynx project bootstrapped with `create-rspeedy`.
+这是一个使用 `create-rspeedy` 创建的 ReactLynx 项目，实现了搜索卡片和瀑布流功能，并集成了 Express 后端服务。
 
-## Getting Started
+## 快速开始
 
-First, install the dependencies:
+### 1. 安装依赖
+
+首次运行前，请在项目根目录下安装所有依赖：
 
 ```bash
 npm install
 ```
 
-Then, run the development server:
+### 2. 启动后端服务
+
+本项目依赖后端服务提供数据和图片资源，**必须先启动后端服务**才能正常显示图片和数据。
+
+```bash
+# 启动后端服务
+npm run server
+
+# 或者启动带热重载的开发模式（推荐开发时使用）
+npm run server:dev
+```
+
+后端服务默认运行在 `8888` 端口。启动成功后，你可以通过浏览器访问 `http://localhost:8888/health` 验证服务是否正常。
+
+### 3. 启动前端开发环境
 
 ```bash
 npm run dev
 ```
 
-Scan the QRCode in the terminal with your LynxExplorer App to see the result.
+启动后，终端会显示一个二维码。请使用 **LynxExplorer App** 扫描该二维码预览项目效果。
 
-You can start editing the page by modifying `src/App.jsx`. The page auto-updates as you edit the file.
+你可以通过修改 `src/App.jsx` 来编辑页面，页面会在保存后自动更新。
 
-## Description Of The Project
-This pdf doc describes the progress of this task.
+## 真机调试配置说明
 
-It's a pdf version of a feishu doc.
+如果你使用手机连接电脑热点（或同一局域网）进行真机调试，**必须**配置正确的 IP 地址，否则手机无法加载图片和数据。
 
-第2周作业进度.pdf
+请打开 `src/utils/request.js` 文件，找到 `baseURL` 配置：
 
-## Backend
+```javascript
+// src/utils/request.js
 
-Start the backend server from the project root:
+// 场景 A：真机调试 (手机连接电脑热点)
+// 请将 IP 修改为你电脑在局域网内的实际 IP 地址 (例如 192.168.x.x 或 172.20.10.x)
+export const baseURL = 'http://172.20.10.2:8888'; 
 
-```bash
-npm run server
+// 场景 B：模拟器调试
+// export const baseURL = 'http://localhost:8888';
 ```
 
-Start with auto-reload (development):
+> **注意**：每次网络环境变化（如重新连接热点），电脑的 IP 地址可能会改变，请务必检查并更新。
 
-```bash
-npm run server:dev
-```
+## 后端接口说明
 
-Default port is `8888` (can be overridden via `PORT`).
+后端服务提供了以下 API 接口：
 
-API endpoints:
+- **健康检查**: `GET /health`
+- **店铺头部信息**: `GET /api/shop-header`
+- **店铺商品列表**: `GET /api/shop-products` (包含 100 个商品数据，支持横向滚动)
+- **瀑布流卡片**: `GET /api/waterfall-cards` (支持瀑布流展示)
 
-- `GET /health`
-- `GET /api/shop-header`
-- `GET /api/shop-products`
-- `GET /api/waterfall-cards`
+### 静态资源
 
-Static assets:
+所有图片资源均通过后端托管，访问路径为 `/static/...`。
 
-- Served under `GET /static/...`
+## 项目描述
 
-For detailed instructions on the Express backend, see the [Express Backend Guide](.trae/documents/EXPRESS_BACKEND_GUIDE.md).
+本项目实现了类似抖音搜索结果页的卡片布局，主要包含三个部分：
+
+1.  **店铺头部 (ShopHeader)**: 展示店铺名称、Logo、评分、位置等信息，数据由 Redux 管理并从后端获取。
+2.  **商品横滑列表 (ShopProduct)**: 展示店铺的热门商品，支持横向滚动查看，包含 100 个商品卡片。
+3.  **瀑布流列表 (WaterfallCards)**: 展示用户评价或推荐内容的瀑布流布局。
+
+详细的作业进度说明可见根目录下的 `第2周作业进度.pdf`。
