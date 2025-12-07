@@ -9,7 +9,9 @@
     "format": "biome format --write",
     "lint": "eslint .",
     "preview": "rspeedy preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "server": "npm --prefix server run server",
+    "server:dev": "npm --prefix server run dev"
   },
   "dependencies": {
     "@lynx-js/react": "^0.114.5",
