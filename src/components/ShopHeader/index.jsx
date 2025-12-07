@@ -1,7 +1,7 @@
 import { useState } from '@lynx-js/react';
 import './index.css';
-import heartIcon from '../../assets/Icons/redHeart.png';
-import emptyHeartIcon from '../../assets/Icons/whiteHeart.png';
+import heartIcon from '@/assets/Icons/redHeart.png';
+import emptyHeartIcon from '@/assets/Icons/whiteHeart.png';
 import { defaultShopData } from './data';
 
 export function ShopHeader(props) {

@@ -1,4 +1,4 @@
-import { commentCardsPictures } from '../../assets/example-pictures/comment-cards/commentCardsPictures';
+import { commentCardsPictures } from '@/assets/example-pictures/comment-cards/commentCardsPictures';
 import './index.css';
 
 export function WaterfallCards() {
